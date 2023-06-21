@@ -1,0 +1,15 @@
+<p align="center">
+{% extends 'flatpages/default.html' %}
+</p>
+
+{% load custom_filters %}
+
+{% block title %}
+Новости и статьи
+{% endblock title %}
+
+{% block content %}
+    <h2>{{ post.title|censor:'***' }}</h2>
+    <p>{{ post.dateCreation|date:'d M Y' }}</p>
+    <p>{{ post.text|censor:'***цензура***' }}</p>
+{% endblock content %}
